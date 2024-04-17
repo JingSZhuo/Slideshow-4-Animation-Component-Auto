@@ -2,15 +2,18 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-width: 1024px;
+  width: 100%;
   height: 100vh;
 }
 
 .slideshow-container{
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  /* transform: rotateX(calc(6deg)) rotateY(calc(3deg)); */
+  height: 50%;
   perspective: 20rem;
   transform-style: preserve-3d;
   transform-origin: center;
@@ -18,24 +21,38 @@ main{
 
 .slideshow-element{
   position: absolute;
-  top: 30%;
-  left: 35%;
   width: 30rem;
   height: 19.5rem;
   transition: all .3s linear;
 }
 
 .element-current{
-  transform: translate3d(-5%, -5%, 0);
+  transform: translate3d(0%, 0%, 0);
   z-index: 9999;
 }
 
 .element-previous{
-  transform: translate3d(-25%, -5%, -3rem);
+  transform: translate3d(-25%, 0%, -3rem);
   opacity: 0.4;
 }
 
 .element-next{
-  transform: translate3d(20%, -5%, -3rem);
+  transform: translate3d(25%, 0%, -3rem);
   opacity: 0.4;
+}
+
+.prev{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.next{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
 }
