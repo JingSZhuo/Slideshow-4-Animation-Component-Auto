@@ -6,7 +6,7 @@ import ImageItem from './components/img.tsx'
 
 const App = () => {
   const [active, setActive] = useState<number>(0)
-  const elementStatus: string[] = ['element-current', 'element-previous', 'element-next']
+  const elementStatus: string[] = ['element-invisible', 'element-next', 'element-current', 'element-previous']
 
   useEffect(() => {
     const timer: number = setTimeout(() => {
@@ -30,6 +30,10 @@ const App = () => {
         <ImageItem 
           class={elementStatus[(active+2) % elementStatus.length]} 
           url={"https://e0.pxfuel.com/wallpapers/762/510/desktop-wallpaper-sunset-city-scenery-anime.jpg"}
+        />
+        <ImageItem 
+          class={elementStatus[(active+3) % elementStatus.length]} 
+          url={"https://wallpapers-clan.com/wp-content/uploads/2023/12/anime-girl-pink-eyes-city-desktop-wallpaper-preview.jpg"}
         />
       </div>
     </main>
